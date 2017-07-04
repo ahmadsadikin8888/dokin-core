@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- BEGIN LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="{{ asset('assets/pages/img/logo-big.png') }}" alt="" /> </a>
+    </div>
+    <!-- END LOGO -->
+
+
+    
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
