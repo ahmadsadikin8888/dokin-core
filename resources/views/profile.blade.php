@@ -50,11 +50,11 @@
                                                     <div class="portlet light profile-sidebar-portlet ">
                                                         <!-- SIDEBAR USERPIC -->
                                                         <div class="profile-userpic">
-                                                            <img src="{{ asset('assets/metronic/assets/pages/media/profile/profile_user.jpg') }}" class="img-responsive" alt=""> </div>
+                                                            <img src="{{asset('uploads/propic/original/'.$user->avatar)}}" class="img-responsive" alt=""> </div>
                                                         <!-- END SIDEBAR USERPIC -->
                                                         <!-- SIDEBAR USER TITLE -->
                                                         <div class="profile-usertitle">
-                                                            <div class="profile-usertitle-name"> Marcus Doe </div>
+                                                            <div class="profile-usertitle-name"> {{$user->name}} </div>
                                                             <div class="profile-usertitle-job"> Developer </div>
                                                         </div>
                                                         <!-- END SIDEBAR USER TITLE -->
@@ -99,31 +99,15 @@
                                                                     <div class="tab-content">
                                                                         <!-- PERSONAL INFO TAB -->
                                                                         <div class="tab-pane active" id="tab_1_1">
-                                                                            <form role="form" action="#">
+                                                                            <form  method="post" action="{{action('ProfileController@update',$id)}}">
+                                                                            {{csrf_field()}}
+                                                                             <input name="_method" type="hidden" value="PATCH">
+                                                                              <input name="type" type="hidden" value="info">
                                                                                 <div class="form-group">
-                                                                                    <label class="control-label">First Name</label>
-                                                                                    <input type="text" placeholder="John" class="form-control" /> </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">Last Name</label>
-                                                                                    <input type="text" placeholder="Doe" class="form-control" /> </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">Mobile Number</label>
-                                                                                    <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">Interests</label>
-                                                                                    <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">Occupation</label>
-                                                                                    <input type="text" placeholder="Web Developer" class="form-control" /> </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">About</label>
-                                                                                    <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label class="control-label">Website Url</label>
-                                                                                    <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                                                                    <label class="control-label">Name</label>
+                                                                                    <input type="text" placeholder="John" name="name" class="form-control" value="{{$user->name}}"/> </div>
                                                                                 <div class="margiv-top-10">
-                                                                                    <a href="javascript:;" class="btn green"> Save Changes </a>
+                                                                                    <button type="submit" class="btn green"> Save Changes </button>
                                                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                                                 </div>
                                                                             </form>
@@ -131,19 +115,20 @@
                                                                         <!-- END PERSONAL INFO TAB -->
                                                                         <!-- CHANGE AVATAR TAB -->
                                                                         <div class="tab-pane" id="tab_1_2">
-                                                                            <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                                                                nesciunt laborum eiusmod. </p>
-                                                                            <form action="#" role="form">
+                                                                             <form  method="post" action="{{action('ProfileController@update',$id)}}" enctype="multipart/form-data">
+                                                                                {{csrf_field()}}
+                                                                                <input name="_method" type="hidden" value="PATCH">
+                                                                                <input name="type" type="hidden" value="avatar">
                                                                                 <div class="form-group">
                                                                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                                                                         <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+                                                                                            <img src="{{asset('uploads/propic/original/'.$user->avatar)}}" alt="" /> </div>
                                                                                         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                                                                         <div>
                                                                                             <span class="btn default btn-file">
                                                                                                 <span class="fileinput-new"> Select image </span>
                                                                                                 <span class="fileinput-exists"> Change </span>
-                                                                                                <input type="file" name="..."> </span>
+                                                                                                <input type="file" name="avatar" > </span>
                                                                                             <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                                                         </div>
                                                                                     </div>
@@ -153,7 +138,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="margin-top-10">
-                                                                                    <a href="javascript:;" class="btn green"> Submit </a>
+                                                                                    <button type="submit" class="btn green"> Save Changes </button>
                                                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                                                 </div>
                                                                             </form>
