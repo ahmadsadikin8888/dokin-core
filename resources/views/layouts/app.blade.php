@@ -358,12 +358,12 @@
                                         <!-- BEGIN USER LOGIN DROPDOWN -->
                                         <li class="dropdown dropdown-user dropdown-dark">
                                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                <img alt="" class="img-circle" src="{{ asset('assets/metronic/assets/layouts/layout3/img/avatar9.jpg') }}">
-                                                <span class="username username-hide-mobile">Nick</span>
+                                                <img alt="" class="img-circle" src="{{ asset('uploads/propic/original/'.Auth::user()->avatar) }}">
+                                                <span class="username username-hide-mobile">{{ Auth::user()->name }}</span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-default">
                                                 <li>
-                                                    <a href="page_user_profile_1.html">
+                                                    <a href="{{ url('/profile') }}">
                                                         <i class="icon-user"></i> My Profile </a>
                                                 </li>
                                                 <li>
