@@ -108,7 +108,6 @@
                                                                                     <input type="text" placeholder="John" name="name" class="form-control" value="{{$user->name}}"/> </div>
                                                                                 <div class="margiv-top-10">
                                                                                     <button type="submit" class="btn green"> Save Changes </button>
-                                                                                    <a href="javascript:;" class="btn default"> Cancel </a>
                                                                                 </div>
                                                                             </form>
                                                                         </div>
@@ -139,26 +138,27 @@
                                                                                 </div>
                                                                                 <div class="margin-top-10">
                                                                                     <button type="submit" class="btn green"> Save Changes </button>
-                                                                                    <a href="javascript:;" class="btn default"> Cancel </a>
                                                                                 </div>
                                                                             </form>
                                                                         </div>
                                                                         <!-- END CHANGE AVATAR TAB -->
                                                                         <!-- CHANGE PASSWORD TAB -->
                                                                         <div class="tab-pane" id="tab_1_3">
-                                                                            <form action="#">
+                                                                             <form  method="post" action="{{action('ProfileController@update',$id)}}">
+                                                                                {{csrf_field()}}
+                                                                                <input name="_method" type="hidden" value="PATCH">
+                                                                                <input name="type" type="hidden" value="password">
                                                                                 <div class="form-group">
                                                                                     <label class="control-label">Current Password</label>
-                                                                                    <input type="password" class="form-control" /> </div>
+                                                                                    <input type="password" name="curpassword" class="form-control" /> </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label">New Password</label>
-                                                                                    <input type="password" class="form-control" /> </div>
+                                                                                    <input type="password" name="newpassword" class="form-control" /> </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label">Re-type New Password</label>
-                                                                                    <input type="password" class="form-control" /> </div>
+                                                                                    <input type="password" name="renewpassword" class="form-control" /> </div>
                                                                                 <div class="margin-top-10">
-                                                                                    <a href="javascript:;" class="btn green"> Change Password </a>
-                                                                                    <a href="javascript:;" class="btn default"> Cancel </a>
+                                                                                    <button type="submit" class="btn green"> Save Changes </button>
                                                                                 </div>
                                                                             </form>
                                                                         </div>

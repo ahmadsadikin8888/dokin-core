@@ -39,6 +39,7 @@
     <link href="{{asset('assets/metronic/assets/layouts/layout3/css/themes/default.min.css') }}" rel="stylesheet" type="text/css" id="style_color" />
     <link href="{{asset('assets/metronic/assets/layouts/layout3/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
         
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
     <!-- END THEME LAYOUT STYLES -->
@@ -388,18 +389,18 @@
                                                         <i class="icon-lock"></i> Lock Screen </a>
                                                 </li>
                                                 <li>
-                                                    <a href="page_user_login_1.html">
+                                                    <a href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                            {{ csrf_field() }}
+                                                        </form>
                                                         <i class="icon-key"></i> Log Out </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <!-- END USER LOGIN DROPDOWN -->
-                                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-                                        <li class="dropdown dropdown-extended quick-sidebar-toggler">
-                                            <span class="sr-only">Toggle Quick Sidebar</span>
-                                            <i class="icon-logout"></i>
-                                        </li>
-                                        <!-- END QUICK SIDEBAR TOGGLER -->
+                                        
                                     </ul>
                                 </div>
                                 <!-- END TOP NAVIGATION MENU -->
@@ -1197,8 +1198,32 @@
        
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script src="{{ asset('assets/metronic/assets/pages/scripts/login-4.min.js') }}" type="text/javascript"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <!-- END THEME LAYOUT SCRIPTS -->
+        <script>
+            @if(Session::has('message'))
+                var type = "{{ Session::get('alert-type', 'info') }}";
+                switch(type){
+                    case 'info':
+                        toastr.info("{{ Session::get('message') }}");
+                        break;
+                    
+                    case 'warning':
+                        toastr.warning("{{ Session::get('message') }}");
+                        break;
+
+                    case 'success':
+                        toastr.success("{{ Session::get('message') }}");
+                        break;
+
+                    case 'error':
+                        toastr.error("{{ Session::get('message') }}");
+                        break;
+                }
+            @endif
+            </script>
 </body>
 </html>
