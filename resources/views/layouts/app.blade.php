@@ -428,29 +428,19 @@
                                 <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="javascript:;"> Dashboard
-                                                <span class="arrow"></span>
-                                            </a>
-                                            <ul class="dropdown-menu pull-left">
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="index.html" class="nav-link  ">
-                                                        <i class="icon-bar-chart"></i> Default Dashboard
-                                                        <span class="badge badge-success">1</span>
-                                                    </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="dashboard_2.html" class="nav-link  ">
-                                                        <i class="icon-bulb"></i> Dashboard 2 </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="dashboard_3.html" class="nav-link  ">
-                                                        <i class="icon-graph"></i> Dashboard 3
-                                                        <span class="badge badge-danger">3</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            <a href="{{ url('/home') }}"> Dashboard
+                                           </a>
                                         </li>
-                                        <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="{{ route('users.index') }}">Users</a>
+                                        </li>
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="{{ route('roles.index') }}">Roles</a>
+                                        </li>
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="{{ route('itemCRUD2.index') }}">Items</a>
+                                        </li>
+                                       <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">
                                             <a href="javascript:;"> UI Features
                                                 <span class="arrow"></span>
                                             </a>
