@@ -23,9 +23,12 @@
     <link href="{{ asset('assets/metronic/assets/global/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/metronic/assets/global/plugins/select2/css/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
-     <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <link href="{{ asset('assets/metronic/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
-        <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="{{ asset('assets/metronic/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/metronic/assets/global/plugins/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+        
+    <!-- END PAGE LEVEL PLUGINS -->
         
     <!-- BEGIN PAGE LEVEL STYLES -->
         <link href="{{ asset('assets/metronic/assets/pages/css/profile.min.css') }}" rel="stylesheet" type="text/css" />
@@ -1134,6 +1137,7 @@
                     <!-- END HEADER -->
                 </div>
             </div>
+            
         @yield('content')
         <div class="page-wrapper-row">
                 <div class="page-wrapper-bottom">
@@ -1169,24 +1173,33 @@
         <script src="{{ asset('assets/metronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/metronic/assets/global/plugins/jquery.blockui.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
+        
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery-validation/js/additional-methods.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/metronic/assets/global/plugins/select2/js/select2.full.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/metronic/assets/global/plugins/backstretch/jquery.backstretch.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>
-       
+        
         <!-- END PAGE LEVEL PLUGINS -->
          <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="{{ asset('assets/metronic/assets/global/scripts/app.min.js') }}" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script src="{{ asset('assets/metronic/assets/pages/scripts/profile.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery-validation/js/additional-methods.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/select2/js/select2.full.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/backstretch/jquery.backstretch.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/scripts/datatable.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
+         <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js') }}" type="text/javascript"></script>
+        
+        <script src="{{ asset('assets/metronic/assets/pages/scripts/ui-confirmations.min.js') }}" type="text/javascript"></script>
+        
         <!-- END PAGE LEVEL SCRIPTS -->
        
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="{{ asset('assets/metronic/assets/pages/scripts/table-datatables-fixedheader.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/metronic/assets/pages/scripts/login-4.min.js') }}" type="text/javascript"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
     
