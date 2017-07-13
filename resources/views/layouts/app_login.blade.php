@@ -51,6 +51,8 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
+                        
+                        {{ $website_config->title }}
                     </a>
                 </div>
 
