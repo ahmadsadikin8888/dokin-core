@@ -441,6 +441,9 @@
                                             <a href="{{ route('roles.index') }}">Roles</a>
                                         </li>
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="{{ url('/setting') }}">Setting</a>
+                                        </li>
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="{{ route('itemCRUD2.index') }}">Items</a>
                                         </li>
                                        <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">

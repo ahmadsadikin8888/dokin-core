@@ -108,8 +108,7 @@
                                                 </div>
                                                 <!-- END EXAMPLE TABLE PORTLET-->
 
-											{!! $data->render() !!}
-	 										</div>
+											</div>
                                         </div>
                                     </div>
                                     <!-- END PAGE CONTENT INNER -->
