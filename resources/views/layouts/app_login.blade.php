@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> {{ $website_config->title }}</title>
 
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
@@ -50,9 +50,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                        
-                        {{ $website_config->title }}
+                         {{ $website_config->title }}
                     </a>
                 </div>
 
@@ -100,7 +98,7 @@
     <!-- Scripts -->
 
     <!-- BEGIN COPYRIGHT -->
-        <div class="copyright"> 2014 &copy; Metronic - Admin Dashboard Template. </div>
+        <div class="copyright">  {{ $website_config->year }} &copy;  {{ $website_config->copyright }}. </div>
         <!-- END COPYRIGHT -->
         <!--[if lt IE 9]>
 <script src="../assets/metronic/assets/global/plugins/respond.min.js"></script>
