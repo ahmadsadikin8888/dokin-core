@@ -4,7 +4,7 @@
 <!-- BEGIN LOGO -->
     <div class="logo">
         <a href="index.html">
-            <img src="{{ asset('assets/metronic/assets/pages/img/logo-big.png') }}" alt="" /> </a>
+            <img src=" {{ asset('uploads/setting/original/'.$website_config->logo) }}" alt="" /> </a>
     </div>
     <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
