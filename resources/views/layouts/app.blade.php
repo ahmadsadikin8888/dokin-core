@@ -31,8 +31,12 @@
     <!-- END PAGE LEVEL PLUGINS -->
         
     <!-- BEGIN PAGE LEVEL STYLES -->
-        <link href="{{ asset('assets/metronic/assets/pages/css/profile.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- END PAGE LEVEL STYLES -->
+    <link href="{{ asset('assets/metronic/assets/pages/css/profile.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/metronic/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/metronic/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/metronic/assets/global/plugins/bootstrap-summernote/summernote.css') }}" rel="stylesheet" type="text/css" />
+    
+    <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="{{ asset('assets/metronic/assets/global/css/components-rounded.min.css') }}" rel="stylesheet" id="style_components" type="text/css" />
     <link href="{{ asset('assets/metronic/assets/global/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
@@ -216,6 +220,13 @@
         
         <script src="{{ asset('assets/metronic/assets/pages/scripts/ui-confirmations.min.js') }}" type="text/javascript"></script>
         
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-markdown/lib/markdown.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/global/plugins/bootstrap-summernote/summernote.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/metronic/assets/pages/scripts/components-editors.min.js') }}" type="text/javascript"></script>
+       
         <!-- END PAGE LEVEL SCRIPTS -->
        
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
