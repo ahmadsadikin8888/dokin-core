@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Post;
+use App\Pages;
 use DB;
 use Hash;
 use File,Image;
 
-class PostController extends Controller
+class PagesController extends Controller
 {
 
     /**
@@ -19,8 +19,8 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Post::orderBy('id','DESC')->paginate(5);
-        return view('posts.index',compact('data'))
+        $data = Page::orderBy('id','DESC')->paginate(5);
+        return view('pages.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +31,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('pages.create');
     }
 
     /**
@@ -53,8 +53,8 @@ class PostController extends Controller
          ]);
          $post = new Post;
         $file = $request->file('image');
-        $thumbnail_path = public_path('uploads/posts/thumbnail/');
-        $original_path = public_path('uploads/posts/original/');
+        $thumbnail_path = public_path('uploads/pages/thumbnail/');
+        $original_path = public_path('uploads/pages/original/');
         $file_name = time() . '.' . $file->getClientOriginalExtension();
             Image::make($file)
                 ->resize(1100,null,function ($constraint) {
@@ -71,7 +71,7 @@ class PostController extends Controller
          $post->tag = $request->get('tag');
          
         $post->save();
-        return redirect()->route('posts.index')
+        return redirect()->route('pages.index')
                         ->with('success','Post created successfully');
     }
 
@@ -84,7 +84,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('posts.show',compact('post'));
+        return view('pages.show',compact('post'));
     }
 
     /**
@@ -96,7 +96,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts.edit',compact('post'));
+        return view('pages.edit',compact('post'));
     }
 
     /**
@@ -140,7 +140,7 @@ class PostController extends Controller
          $post->keyword = $request->get('keyword');
          $post->tag = $request->get('tag');
         $post->update($input);
-        return redirect()->route('posts.index')
+        return redirect()->route('pages.index')
                         ->with('success','Post updated successfully');
     }
 
@@ -153,7 +153,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-        return redirect()->route('posts.index')
+        return redirect()->route('pages.index')
                         ->with('success','Post deleted successfully');
     }
 }

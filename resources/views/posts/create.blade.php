@@ -78,7 +78,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 @endif
-                                                                {!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}
+                                                                {!! Form::open(array('route' => 'posts.store','method'=>'POST','enctype'=>'multipart/form-data')) !!}
                                                                            
                                                                        
                                                                     <div class="tab-content">
@@ -89,10 +89,10 @@
                                                                                     <input type="text" placeholder="John" name="title" class="form-control" value=""/> </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label">Description</label>
-                                                                                    <input type="text" placeholder="John" name="description" class="form-control" value=""/> </div>
+                                                                                    <input type="text" placeholder="Description" name="description" class="form-control" value=""/> </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label">Content</label>
-                                                                                    <input type="text" placeholder="John" name="content" class="form-control" value=""/> </div>
+                                                                                    <textarea name="content" id="summernote_1"> </textarea></div>
                                                                                 <div class="margiv-top-10">
                                                                                     <button type="submit" class="btn green"> Submit </button>
                                                                                 </div>
@@ -102,9 +102,9 @@
                                                                         <div class="tab-pane" id="tab_1_2">
                                                                                <div class="form-group">
                                                                                     <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                                        <div class="fileinput-new thumbnail" style="width: 1100px; height: 300px;">
                                                                                             <img src="" alt="" /> </div>
-                                                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 1100px; max-height: 300px;"> </div>
                                                                                         <div>
                                                                                             <span class="btn default btn-file">
                                                                                                 <span class="fileinput-new"> Select image </span>
@@ -127,10 +127,10 @@
                                                                         <div class="tab-pane" id="tab_1_3">
                                                                                   <div class="form-group">
                                                                                     <label class="control-label">Keyword</label>
-                                                                                    <input type="text" placeholder="John" name="keyword" class="form-control" value=""/> </div>
+                                                                                    <input type="text" placeholder="Keyword" name="keyword" class="form-control" value=""/> </div>
                                                                                  <div class="form-group">
                                                                                     <label class="control-label">Tag</label>
-                                                                                    <input type="text" placeholder="John" name="tag" class="form-control" value=""/> </div>
+                                                                                    <input type="text" placeholder="Tag 1,Tag 2" name="tag" class="form-control" value=""/> </div>
                                                                                 
                                                                                 <div class="margin-top-10">
                                                                                     <button type="submit" class="btn green">Submit</button>

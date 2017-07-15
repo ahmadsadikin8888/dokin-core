@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('profile', 'ProfileController');
 	Route::resource('setting', 'SettingController');
 	Route::resource('posts', 'PostController');
+	Route::resource('pages', 'PageController');
 
 	Route::get('roles',['as'=>'roles.index','uses'=>'RoleController@index','middleware' => ['permission:role-list|role-create|role-edit|role-delete']]);
 	Route::get('roles/create',['as'=>'roles.create','uses'=>'RoleController@create','middleware' => ['permission:role-create']]);

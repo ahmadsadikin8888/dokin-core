@@ -12,6 +12,7 @@ class Post extends Authenticatable
     use Notifiable;
     use EntrustUserTrait;
 
+    protected $fillable = ['title', 'description', 'content','image','keyword','tag'];
     /**
      * The attributes that are mass assignable.
      *

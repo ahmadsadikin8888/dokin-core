@@ -57,7 +57,7 @@ class SettingController extends Controller
                 $redirec="#tab_1_1";
             break;
             case "logo":
-                 $file = $request->file('logo');
+                $file = $request->file('logo');
                 $thumbnail_path = public_path('uploads/setting/thumbnail/');
                 $original_path = public_path('uploads/setting/original/');
                 $file_name = time() . '.' . $file->getClientOriginalExtension();
