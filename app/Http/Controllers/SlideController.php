@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Pages;
+use App\Slide;
 use DB;
 use Hash;
 use File,Image;
 
-class PagesController extends Controller
+class SlideController extends Controller
 {
 
     /**
@@ -19,8 +19,8 @@ class PagesController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Page::orderBy('id','DESC')->paginate(5);
-        return view('pages.index',compact('data'))
+        $data = Slide::orderBy('id','DESC')->paginate(5);
+        return view('slides.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +31,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        return view('pages.create');
+        return view('slides.create');
     }
 
     /**
@@ -45,16 +45,12 @@ class PagesController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'content' => 'required',
             'image' => 'required | mimes:jpeg,jpg,png | max:1000',
-            'keyword' => 'required',
-            'tag' => 'required',
-            
          ]);
-         $post = new Post;
+         $post = new Slide;
         $file = $request->file('image');
-        $thumbnail_path = public_path('uploads/pages/thumbnail/');
-        $original_path = public_path('uploads/pages/original/');
+        $thumbnail_path = public_path('uploads/slides/thumbnail/');
+        $original_path = public_path('uploads/slides/original/');
         $file_name = time() . '.' . $file->getClientOriginalExtension();
             Image::make($file)
                 ->resize(1100,null,function ($constraint) {
@@ -66,13 +62,10 @@ class PagesController extends Controller
          $post->image = $file_name;
          $post->title = $request->get('title');
          $post->description = $request->get('description');
-         $post->content = $request->get('content');
-         $post->keyword = $request->get('keyword');
-         $post->tag = $request->get('tag');
          
         $post->save();
-        return redirect()->route('pages.index')
-                        ->with('success','Post created successfully');
+        return redirect()->route('slides.index')
+                        ->with('success','Slide created successfully');
     }
 
     /**
@@ -83,8 +76,8 @@ class PagesController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('pages.show',compact('post'));
+        $post = Slide::find($id);
+        return view('slides.show',compact('post'));
     }
 
     /**
@@ -95,8 +88,8 @@ class PagesController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
-        return view('pages.edit',compact('post'));
+        $post = Slide::find($id);
+        return view('slides.edit',compact('post'));
     }
 
     /**
@@ -111,18 +104,15 @@ class PagesController extends Controller
        $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'content' => 'required',
-            'keyword' => 'required',
-            'tag' => 'required',
          ]);
 
 
         $input = $request->all();
-        $post = Post::find($id);
+        $post = Slide::find($id);
         $file = $request->file('image');
         if($file){
-            $thumbnail_path = public_path('uploads/posts/thumbnail/');
-        $original_path = public_path('uploads/posts/original/');
+            $thumbnail_path = public_path('uploads/slides/thumbnail/');
+        $original_path = public_path('uploads/slides/original/');
         $file_name = time() . '.' . $file->getClientOriginalExtension();
             Image::make($file)
                 ->resize(1100,null,function ($constraint) {
@@ -136,12 +126,9 @@ class PagesController extends Controller
         }
          $post->title = $request->get('title');
          $post->description = $request->get('description');
-         $post->content = $request->get('content');
-         $post->keyword = $request->get('keyword');
-         $post->tag = $request->get('tag');
         $post->update($input);
-        return redirect()->route('pages.index')
-                        ->with('success','Post updated successfully');
+        return redirect()->route('slides.index')
+                        ->with('success','Slide updated successfully');
     }
 
     /**
@@ -152,8 +139,8 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-        Post::find($id)->delete();
-        return redirect()->route('pages.index')
-                        ->with('success','Post deleted successfully');
+        Slide::find($id)->delete();
+        return redirect()->route('slides.index')
+                        ->with('success','Slide deleted successfully');
     }
 }
