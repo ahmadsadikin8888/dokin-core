@@ -33,7 +33,7 @@
                   <div class="row">
                      <!-- LOGO -->
                      <div class="topbar-left col-sm-3 col-xs-4">
-                        <a href="index.html" class="logo"> <img src="{{ asset('assets/kupon/assets/images/logo.png') }}" alt="" class="img-responsive"> </a>
+                        <a href="index.html" class="logo"> <img src="{{ asset('uploads/setting/original/'.$website_config->logo) }}" alt="" class="img-responsive"> </a>
                      </div>
                      <!-- End Logo container-->
                      <div class="menu-extras col-sm-9 col-xs-8">
