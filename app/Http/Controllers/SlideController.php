@@ -57,7 +57,7 @@ class SlideController extends Controller
                     $constraint->aspectRatio();
                     })
                 ->save($original_path . $file_name)
-                ->resize(90, 90)
+                ->resize(120, 50)
                 ->save($thumbnail_path . $file_name);
          $post->image = $file_name;
          $post->title = $request->get('title');
@@ -112,16 +112,16 @@ class SlideController extends Controller
         $file = $request->file('image');
         if($file){
             $thumbnail_path = public_path('uploads/slides/thumbnail/');
-        $original_path = public_path('uploads/slides/original/');
-        $file_name = time() . '.' . $file->getClientOriginalExtension();
-            Image::make($file)
-                ->resize(1100,null,function ($constraint) {
-                    $constraint->aspectRatio();
-                    })
-                ->save($original_path . $file_name)
-                ->resize(90, 90)
-                ->save($thumbnail_path . $file_name);
-         $post->image = $file_name;
+            $original_path = public_path('uploads/slides/original/');
+            $file_name = time() . '.' . $file->getClientOriginalExtension();
+                Image::make($file)
+                    ->resize(1100,null,function ($constraint) {
+                        $constraint->aspectRatio();
+                        })
+                    ->save($original_path . $file_name)
+                    ->resize(120, 50)
+                    ->save($thumbnail_path . $file_name);
+            $post->image = $file_name;
         
         }
          $post->title = $request->get('title');
