@@ -159,6 +159,9 @@
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="{{ route('slides.index') }}">Slides</a>
                                         </li>
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                            <a href="{{ route('produks.index') }}">Produks</a>
+                                        </li>
                                        
                                     </ul>
                                 </div>
