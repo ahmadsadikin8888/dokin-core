@@ -63,6 +63,7 @@
                                                                 <tr>
 																	<th>No</th>
 																	<th>Title</th>
+                                                                    <th>Link</th>
 																	<th>Description</th>
 																	<th>Publish Date</th>
 																	<th>Action</th>
@@ -72,6 +73,7 @@
                                                                 <tr>
 																	<th>No</th>
 																	<th>Title</th>
+                                                                    <th>Link</th>
 																	<th>Description</th>
 																	<th>Publish Date</th>
 																	<th>Action</th>
@@ -82,6 +84,7 @@
 																<tr>
 																	<td>{{ ++$i }}</td>
 																	<td>{{ $user->title }}</td>
+                                                                    <td>{{ url('/').$user->link }}</td>
 																	<td>{{ $user->description }}</td>
                                                                     <td>{{ $user->created_at }}</td>
 																	<td>

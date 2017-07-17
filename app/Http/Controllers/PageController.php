@@ -65,6 +65,8 @@ class PageController extends Controller
                 ->save($thumbnail_path . $file_name);
          $post->image = $file_name;
          $post->title = $request->get('title');
+         $post->slug =str_replace(" ","-",strtolower($request->get('title')));
+         
          $post->description = $request->get('description');
          $post->content = $request->get('content');
          $post->keyword = $request->get('keyword');
@@ -135,6 +137,7 @@ class PageController extends Controller
         
         }
          $post->title = $request->get('title');
+        $post->slug =str_replace(" ","-",strtolower($request->get('title')));
          $post->description = $request->get('description');
          $post->content = $request->get('content');
          $post->keyword = $request->get('keyword');

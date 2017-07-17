@@ -113,7 +113,7 @@
                   <div id="navigation">
                      <!-- Navigation Menu-->
                      <ul class="navigation-menu">
-                        <li class="active"> <a href="index.html"><i class="ti-home"></i> <span> Home </span> </a> </li>
+                        <li class="active"> <a href="{{ url('/') }}"><i class="ti-home"></i> <span> Home </span> </a> </li>
                         <li class="has-submenu">
                            <a href="#"><i class="ti-shopping-cart"></i> <span> Products </span> </a>
                         </li>
@@ -121,7 +121,7 @@
                            <a href="#"><i class="ti-pencil-alt"></i> <span> Articles </span> </a>
                         </li>
                         <li class="has-submenu">
-                           <a href="#"><i class="ti-heart"></i> <span> About Jafra </span> </a>
+                           <a href="{{ url('/halaman').'/apa-itu-jafra?' }}"><i class="ti-heart"></i> <span> About Jafra </span> </a>
                         </li>
                         <li class="has-submenu">
                            <a href="#"><i class="ti-shopping-cart-full"></i> <span> How To Buy? </span> </a>

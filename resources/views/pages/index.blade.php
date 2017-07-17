@@ -63,6 +63,7 @@
                                                                 <tr>
 																	<th>No</th>
 																	<th>Title</th>
+                                                                    <th>Link</th>
 																	<th>Description</th>
 																	<th>Publish Date</th>
 																	<th>Action</th>
@@ -72,6 +73,8 @@
                                                                 <tr>
 																	<th>No</th>
 																	<th>Title</th>
+																	<th>Link</th>
+                                                                    
 																	<th>Description</th>
 																	<th>Publish Date</th>
 																	<th>Action</th>
@@ -82,7 +85,8 @@
 																<tr>
 																	<td>{{ ++$i }}</td>
 																	<td>{{ $user->title }}</td>
-																	<td>{{ $user->description }}</td>
+																	<td>{{ '/halaman/'.$user->slug }}</td>
+																	<td>{{ substr($user->description, 0, 50).'...' }}</td>
                                                                     <td>{{ $user->created_at }}</td>
 																	<td>
 																		{!! Form::open(['method' => 'DELETE','route' => ['pages.destroy', $user->id],'style'=>'display:inline']) !!}

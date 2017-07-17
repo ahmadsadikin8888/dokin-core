@@ -8,7 +8,7 @@
                      <div class="slide-wrap shadow">
                         <div class="main-slider">
                             @foreach ($slides as $key => $slide)
-                            <a href="#" class="item" data-hash="{{ $slide->id }}"> <img src="{{asset('uploads/slides/original/'.$slide->image)}}" alt=""> </a>
+                            <a href="{{ url('/').$slide->link }}" class="item" data-hash="{{ $slide->id }}"> <img src="{{asset('uploads/slides/original/'.$slide->image)}}" alt=""> </a>
                            @endforeach
                         </div>
                         <!-- /.carosuel -->

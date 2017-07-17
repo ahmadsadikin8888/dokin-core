@@ -12,7 +12,7 @@ class Slide extends Authenticatable
     use Notifiable;
     use EntrustUserTrait;
 
-    protected $fillable = ['title', 'description','image'];
+    protected $fillable = ['title', 'description','image','link'];
     /**
      * The attributes that are mass assignable.
      *
