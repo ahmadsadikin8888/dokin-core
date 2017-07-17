@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/halaman/{slug}',['as'=>'halaman.pages','uses'=>'HalamanController@show']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

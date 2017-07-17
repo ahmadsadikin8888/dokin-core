@@ -45,6 +45,7 @@ class SlideController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
+            'link' => 'required',
             'image' => 'required | mimes:jpeg,jpg,png | max:1000',
          ]);
          $post = new Slide;
@@ -61,6 +62,8 @@ class SlideController extends Controller
                 ->save($thumbnail_path . $file_name);
          $post->image = $file_name;
          $post->title = $request->get('title');
+         $post->link = $request->get('link');
+         
          $post->description = $request->get('description');
          
         $post->save();
@@ -103,6 +106,8 @@ class SlideController extends Controller
     {
        $this->validate($request, [
             'title' => 'required',
+            'link' => 'required',
+            
             'description' => 'required',
          ]);
 
@@ -125,6 +130,8 @@ class SlideController extends Controller
         
         }
          $post->title = $request->get('title');
+         $post->link = $request->get('link');
+         
          $post->description = $request->get('description');
         $post->update($input);
         return redirect()->route('slides.index')

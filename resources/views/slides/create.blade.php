@@ -85,6 +85,10 @@
                                                                                     <label class="control-label">Title</label>
                                                                                     <input type="text" placeholder="John" name="title" class="form-control" value=""/> </div>
                                                                                 <div class="form-group">
+                                                                                    <label class="control-label">Link</label>
+                                                                                    <input type="text" placeholder="Link" name="link" class="form-control" value=""/> </div>
+                                                                                
+                                                                                <div class="form-group">
                                                                                     <label class="control-label">Description</label>
                                                                                     <input type="text" placeholder="Description" name="description" class="form-control" value=""/> </div>
                                                                                 <div class="margiv-top-10">
