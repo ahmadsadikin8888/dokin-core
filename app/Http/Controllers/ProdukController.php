@@ -62,7 +62,7 @@ class ProdukController extends Controller
                     $constraint->aspectRatio();
                     })
                 ->save($original_path . $file_name)
-                ->resize(90, 90)
+                ->resize(150, 150)
                 ->save($thumbnail_path . $file_name);
          $post->image_1 = $file_name;
 
@@ -76,7 +76,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_2 = $file_name;
         }
@@ -90,7 +90,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_3 = $file_name;
         }
@@ -104,7 +104,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_4 = $file_name;
         }
@@ -178,7 +178,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_1 = $file_name;
         
@@ -194,7 +194,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_2 = $file_name;
         }
@@ -208,7 +208,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_3 = $file_name;
         }
@@ -222,7 +222,7 @@ class ProdukController extends Controller
                         $constraint->aspectRatio();
                         })
                     ->save($original_path . $file_name)
-                    ->resize(90, 90)
+                    ->resize(150, 150)
                     ->save($thumbnail_path . $file_name);
             $post->image_4 = $file_name;
         }
