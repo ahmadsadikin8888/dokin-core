@@ -85,52 +85,17 @@
                            </h3>
                            <div class="clearfix"></div>
                         </div>
+                         @foreach ($artikels as $key => $artikel)
                         <div class="widget-body">
                            <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
+                              <div class="media-left media-middle"> <img src="{{ asset('uploads/posts/thumbnail/'.$artikel->image) }}" alt=""> </div>
                               <div class="media-body">
-                                 <h4 class="media-heading">Upto 70% Rewards</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
-                              </div>
-                           </div>
-                           <!--/coupon media -->
-                           <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
-                              <div class="media-body">
-                                 <h4 class="media-heading">Upto 70% Rewards</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
-                              </div>
-                           </div>
-                           <!--/coupon media -->
-                           <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
-                              <div class="media-body">
-                                 <h4 class="media-heading">Up to 50% off Mens Summer Essentials at Clothing</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
-                              </div>
-                           </div>
-                           <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
-                              <div class="media-body">
-                                 <h4 class="media-heading">Up to 50% off Mens Summer Essentials at Clothing</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
-                              </div>
-                           </div>
-                           <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
-                              <div class="media-body">
-                                 <h4 class="media-heading">Up to 50% off Mens Summer Essentials at Clothing</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
-                              </div>
-                           </div>
-                           <div class="media">
-                              <div class="media-left media-middle"> <img src="http://placehold.it/64x64" alt=""> </div>
-                              <div class="media-body">
-                                 <h4 class="media-heading">Up to 50% off Mens Summer Essentials at Clothing</h4>
-                                 <p>Up to 70% off on Clothing ...</p>
+                                 <h4 class="media-heading">{{ $artikel->title }}</h4>
+                                 <p>{{ $artikel->created_at }}</p>
                               </div>
                            </div>
                         </div>
+                         @endforeach
                         <!-- // widget body -->
                      </div>
                      <!-- /widget -->

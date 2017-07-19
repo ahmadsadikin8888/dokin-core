@@ -118,7 +118,7 @@
                            <a href="{{ url('/toko') }}"><i class="ti-shopping-cart"></i> <span> Products </span> </a>
                         </li>
                         <li class="has-submenu">
-                           <a href="#"><i class="ti-pencil-alt"></i> <span> Articles </span> </a>
+                           <a href="{{ url('/artikel') }}"><i class="ti-pencil-alt"></i> <span> Articles </span> </a>
                         </li>
                         <li class="has-submenu">
                            <a href="{{ url('/halaman').'/apa-itu-jafra?' }}"><i class="ti-heart"></i> <span> About Jafra </span> </a>

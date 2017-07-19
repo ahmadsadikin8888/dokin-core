@@ -17,6 +17,8 @@
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/halaman/{slug}',['as'=>'halaman.pages','uses'=>'HalamanController@show']);
 Route::get('/toko',['as'=>'halaman.produk','uses'=>'TokoController@index']);
+Route::get('/artikel',['as'=>'halaman.artikel','uses'=>'ArtikelController@index']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
