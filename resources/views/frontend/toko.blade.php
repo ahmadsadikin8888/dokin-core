@@ -75,18 +75,8 @@
                      <!-- Poplura stores -->
                      
                      <!-- end:Popular stores widget -->
-                     <ul class="pagination pagination-lg m-t-0">
-                        <li>
-                           <a href="#"> <i class="ti-arrow-left"></i> </a>
-                        </li>
-                        <li> <a href="#">1</a> </li>
-                        <li class="active"> <a href="#">2</a> </li>
-                        <li> <a href="#">3</a> </li>
-                        <li> <a href="#">4</a> </li>
-                        <li>
-                           <a href="#"> <i class="ti-arrow-right"></i> </a>
-                        </li>
-                     </ul>
+                     {!! $data->render() !!}
+                     
                   </div>
                </div>
             </div>

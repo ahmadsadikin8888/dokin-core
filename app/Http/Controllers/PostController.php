@@ -57,7 +57,7 @@ class PostController extends Controller
         $original_path = public_path('uploads/posts/original/');
         $file_name = time() . '.' . $file->getClientOriginalExtension();
             Image::make($file)
-                ->resize(1100,null,function ($constraint) {
+                ->resize(980,null,function ($constraint) {
                     $constraint->aspectRatio();
                     })
                 ->save($original_path . $file_name)
